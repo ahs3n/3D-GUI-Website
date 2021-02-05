@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Ahsen's Website</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.javascript"></script>
+    <title>Unity WebGL Player | My Website</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/3D GUI Website.json", {onProgress: UnityProgress});
+      UnityLoader.instantiate("unityContainer", "Build/3D GUI Website.json");
     </script>
-</head>
-<body>
-<div class="webgl-content">
-    <div id="gameContainer" style="width: 100%; height: 100%"></div>
-</div>
-</body>
+  </head>
+  <body>
+    <div id="unityContainer" style="width: 960px; height: 600px; margin: auto"></div>
+  </body>
 </html>
