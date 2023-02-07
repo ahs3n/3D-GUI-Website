@@ -87,7 +87,7 @@
     <script>
       startTime = new Date().getTime();
 
-      const unityCanvas = document.getElementById("unity-canvas");
+      const unityCanvas = document.getElementById("video");
       var cycle = window.setInterval(function(){ 
         var opacity = Math.max(Math.min((4000-ms_elapsed())/1000, 1),0);
         var opacity = ease(opacity) * 100
