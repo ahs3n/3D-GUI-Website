@@ -13,7 +13,7 @@
           width: 100vw;
           height: 100vh;
           object-fit: cover;
-          z-index:10;
+          z-index:8;
       }
     </style>
 
@@ -84,14 +84,17 @@
 
     <video id = "video" loop autoplay muted playinline src="http://01000001-01101011.github.io/3D-GUI-Website/assets/camaro.mp4" alt="Loading, please wait..." type="video/mp4" ></video>
 
+
+    <canvas id="unity-canvas" style="width: 100vw; height: 100vh; background: #00335501"></canvas>
+    <script src="Build/3D GUI Website.loader.js"></script>
     <script>
       startTime = new Date().getTime();
 
-      const unityCanvas = document.getElementById("video");
+      const unityCanvas = document.getElementById("unity-canvas");
       var cycle = window.setInterval(function(){ 
-        var opacity = Math.max(Math.min((4000-ms_elapsed())/1000, 1),0);
+        var opacity = Math.max(Math.min((ms_elapsed()-5000)/1000, 1),0);
         var opacity = ease(opacity) * 100
-        if (opacity > 0){
+        if (opacity < 100){
           unityCanvas.style.filter = `opacity(${opacity}%)`
           console.log(`Updated opacity: ${opacity}`)
         } else {
@@ -112,14 +115,7 @@
 
         return ( time_diff ); 
       }
-
-
-    </script>
-
-
-    <canvas id="unity-canvas" style="width: 100vw; height: 100vh; background: #00335501"></canvas>
-    <script src="Build/3D GUI Website.loader.js"></script>
-    <script>
+        
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
@@ -127,7 +123,7 @@
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
       }
-
+      
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/3D GUI Website.data",
         frameworkUrl: "Build/3D GUI Website.framework.js",
@@ -139,6 +135,7 @@
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
-    </script>
+  
+      </script>
   </body>
 </html>
