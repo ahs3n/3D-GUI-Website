@@ -94,10 +94,10 @@
       var cycle = window.setInterval(function(){ 
         var opacity = Math.max(Math.min((ms_elapsed()-5000)/1000, 1),0);
         var opacity = ease(opacity) * 100
-        if (opacity < 100){
-          unityCanvas.style.filter = `opacity(${opacity}%)`
-          console.log(`Updated opacity: ${opacity}`)
-        } else {
+        unityCanvas.style.filter = `opacity(${opacity}%)`
+        console.log(`Updated opacity: ${opacity}`)
+
+        if (opacity == 100){
           clearInterval(cycle) 
           console.log("Cleared interval")
         }
