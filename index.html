@@ -13,7 +13,7 @@
           width: 100vw;
           height: 100vh;
           object-fit: cover;
-          z-index:8;
+          z-index:2;
       }
     </style>
 
@@ -81,9 +81,12 @@
   </head>
   <body style="text-align: center; margin: 0; padding: 0; overflow: hidden; background: #171717;">
 
+    <div id="videoContainer">
 
-    <video id = "video" loop autoplay muted playinline src="http://01000001-01101011.github.io/3D-GUI-Website/assets/camaro.mp4" alt="Loading, please wait..." type="video/mp4" ></video>
-
+      <img src="http://01000001-01101011.github.io/3D-GUI-Website/assets/watermark.png" style="width: 30vw; margin-bottom: 5px; margin-right: 5px; bottom:0; right:0; position: absolute; z-index:3;" />
+      <video id = "video" loop autoplay muted playinline src="http://01000001-01101011.github.io/3D-GUI-Website/assets/camaro.mp4" alt="Loading, please wait..." type="video/mp4" ></video>
+    
+    </div>
 
     <canvas id="unity-canvas" style="width: 100vw; height: 100vh; background: #00335501"></canvas>
     <script src="Build/3D GUI Website.loader.js"></script>
