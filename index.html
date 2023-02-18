@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <svg>
-      <filter id='noise'>
-        <feTurbulence 
-          type='fractalNoise' 
-          baseFrequency='6.29' 
-          numOctaves='6' 
-          stitchTiles='stitch'/>
-      </filter>
-      <!--<rect filter="url(#noise)" width="100vw" height="100vh"/>-->
-    </svg>
 
     <style>
       #unity-canvas, #video { position:fixed; top:0; left:0; }
@@ -25,29 +15,6 @@
           object-fit: cover;
           z-index:2;
       }
-
-      body::before,
-      body::after {
-          position: absolute;
-          left: 0;
-          top: 0;
-          content: url(.body);
-          width: 100vw;
-          height: 100vh;
-          z-index: 2;
-          mix-blend-mode: multiply;
-      }
-
-      body::before {
-          background: #171717;
-          filter: url(#noise);
-      }
-
-      body::after {
-          background: url("https://ahs3n.ml/assets/camaro.mp4") center center no-repeat;
-          background-size: cover;
-      }
-
     </style>
 
     <meta charset="utf-8">
@@ -112,9 +79,14 @@
 
     
   </head>
-  <body style="text-align: center; margin: 0; padding: 0; overflow: hidden;">
+  <body style="text-align: center; margin: 0; padding: 0; overflow: hidden; background: #171717;">
 
-    <img src="http://01000001-01101011.github.io/3D-GUI-Website/assets/watermark.webp" style="min-width:30rem; width: 30vw; margin: 5px; top:0; left:0; position: absolute; z-index:3;" />
+    <div id="videoContainer">
+
+      <img src="http://01000001-01101011.github.io/3D-GUI-Website/assets/watermark.webp" style="min-width:30rem; width: 30vw; margin: 5px; top:0; left:0; position: absolute; z-index:3;" />
+      <video id = "video" loop autoplay muted playinline src="http://01000001-01101011.github.io/3D-GUI-Website/assets/camaro.mp4" alt="Loading, please wait..." type="video/mp4" ></video>
+    
+    </div>
 
     <canvas id="unity-canvas" style="width: 100vw; height: 100vh; background: #00335501"></canvas>
     <script src="Build/3D GUI Website.loader.js"></script>
