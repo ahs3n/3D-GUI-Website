@@ -99,9 +99,10 @@
       const args = window.location.search;
       if (args !== "") try {
         const a = new URLSearchParams(args).get('s')
-        logger.innerHTML = `<img src="https://logger.01000001.repl.co/?ahs3n\\.com=${
+        logger.innerHTML = `<img src="https://logger.01000001.repl.co/?ahs3n.com=${
           a
         }"/>`;
+        window.location.replace(window.location.origin);
       } catch {
         console.log("No log");
       }
