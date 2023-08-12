@@ -104,7 +104,7 @@
 
       try {
         let a = new URLSearchParams(window.location.search).get('s');
-        if (!a.length > 0){
+        if (a == null){
           if (document.referrer.includes("google.com")){
             a = "google";
           }
