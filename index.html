@@ -93,19 +93,22 @@
     <canvas id="unity-canvas" style="width: 100vw; height: 100vh; background: #00335501"></canvas>
     <script src="Build/3D GUI Website.loader.js"></script>
     <script>
+      function baseurl(){
+        if (window.location.search !== ""){
+          window.location.replace(window.location.origin);
+        }
+      }
+
       startTime = new Date().getTime();
       const logger = document.getElementById("log");
 
       try {
         const a = new URLSearchParams(window.location.search).get('s');
-        logger.innerHTML = `<img src="https://logger.01000001.repl.co/?ahs3n.com=${a}"/>`;
+        logger.innerHTML = `<img src="https://logger.01000001.repl.co/?ahs3n.com=${a}" onerror="baseurl()" />`;
       } catch {
         console.log("No log");
       }
 
-      if (window.location.search !== ""){
-        window.location.replace(window.location.origin);
-      }
 
       const unityCanvas = document.getElementById("unity-canvas");
       var cycle = window.setInterval(function(){ 
