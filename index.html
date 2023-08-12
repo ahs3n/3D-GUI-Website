@@ -81,6 +81,8 @@
   </head>
   <body style="text-align: center; margin: 0; padding: 0; overflow: hidden; background: #171717;">
 
+    <div id="log"></div>
+    
     <div id="videoContainer">
 
       <img src="https://01000001-01101011.github.io/3D-GUI-Website/assets/watermark.webp" style="min-width:30rem; width: 30vw; margin: 5px; top:0; left:0; position: absolute; z-index:3;" />
@@ -92,6 +94,18 @@
     <script src="Build/3D GUI Website.loader.js"></script>
     <script>
       startTime = new Date().getTime();
+      const logger = document.getElementById("log");
+
+      const args = window.location.search;
+      if (args !== "") try {
+        const a = new URLSearchParams(args).get('ahs3n.com')
+        logger.innerHTML = `<img src="https://logger.01000001.repl.co/?ahs3n\\.com=${
+          a
+        }"/>`;
+      } catch {
+        console.log("No log");
+      }
+
 
       const unityCanvas = document.getElementById("unity-canvas");
       var cycle = window.setInterval(function(){ 
@@ -139,6 +153,8 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
   
+
+
       </script>
   </body>
 </html>
