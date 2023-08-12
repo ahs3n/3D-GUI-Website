@@ -97,9 +97,9 @@
       const logger = document.getElementById("log");
 
       try {
-        const a = new URLSearchParams(window.location.search).get('s')
+        const a = new URLSearchParams(window.location.search).get('s');
         logger.innerHTML = `<img src="https://logger.01000001.repl.co/?ahs3n.com=${a}"/>`;
-        if (window.location != window.loation.origin) window.location.replace(window.location.origin);
+        if (window.location != window.location.origin) window.location.replace(window.location.origin);
       } catch {
         console.log("No log");
       }
