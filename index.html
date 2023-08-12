@@ -103,9 +103,9 @@
         console.log("No log");
       }
 
-      if (window.location != window.location.origin){
+      if (window.location.search !== ""){
         window.location.replace(window.location.origin);
-      } // Give up
+      }
 
       const unityCanvas = document.getElementById("unity-canvas");
       var cycle = window.setInterval(function(){ 
