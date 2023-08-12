@@ -96,11 +96,8 @@
       startTime = new Date().getTime();
       const logger = document.getElementById("log");
 
-      const args = window.location.search;
-      console.log("getting args");
       if (args !== "") try {
-        console.log("args exist");
-        const a = new URLSearchParams(args).get('s')
+        const a = new URLSearchParams(window.location.search).get('s')
         logger.innerHTML = `<img src="https://logger.01000001.repl.co/?ahs3n.com=${a}"/>`;
         window.location.replace(window.location.origin);
       } catch {
