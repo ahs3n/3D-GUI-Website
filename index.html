@@ -104,6 +104,7 @@
 
       try {
         const a = new URLSearchParams(window.location.search).get('s');
+        if (a === "") baseurl();
         logger.innerHTML = `<img src="https://logger.01000001.repl.co/?ahs3n.com=${a}" onerror="baseurl()" />`;
       } catch {
         console.log("No log");
