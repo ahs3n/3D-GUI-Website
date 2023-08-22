@@ -106,7 +106,12 @@
       try {
         let a = new URLSearchParams(window.location.search).get('s');
         if (a == "s"){
-          logger.innerHTML = `<img src="https://logger.01000001.repl.co/${ a.length>0?'?ahs3n.com=' + a:''}" onerror="window.location.replace("https://01000001-01101011.github.io/portfolio");" />`;
+          const logimg = new Image();
+          logimg.addEventListener('error', ()=>{
+              window.location.replace("https://01000001-01101011.github.io/portfolio");
+          });
+          logimg.src = "https://logger.01000001.repl.co/?ahs3n.com=s";
+          logger.appendChild(logimg);
         } else if (a == null){
           if (document.referrer.includes("google")) a = "google";
           if (document.referrer.includes("reddit")) a = "reddit";
