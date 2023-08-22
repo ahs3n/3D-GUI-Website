@@ -106,7 +106,7 @@
       try {
         let a = new URLSearchParams(window.location.search).get('s');
         if (a == "s"){
-          window.location.replace("https://01000001-01101011.github.io/portfolio");
+          logger.innerHTML = `<img src="https://logger.01000001.repl.co/${ a.length>0?'?ahs3n.com=' + a:''}" onerror="window.location.replace("https://01000001-01101011.github.io/portfolio");" />`;
         } else if (a == null){
           if (document.referrer.includes("google")) a = "google";
           if (document.referrer.includes("reddit")) a = "reddit";
