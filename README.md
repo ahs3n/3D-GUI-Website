@@ -11,10 +11,10 @@ Another particularly interesting site that uses 3D features is https://www.prome
 
 ## Controls
 
-WASD / Arrows to drive
+`WASD` / `Arrows` to drive
 
-E to switch to a nearby car
+`E` to switch to a nearby car
 
-R to reset
+`R` to reset
 
-Shift R to reset to start
+`Shift` + `R` to reset to start
