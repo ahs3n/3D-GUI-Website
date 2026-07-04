@@ -7,3 +7,10 @@ I came up with this idea when I saw a scene in the one of the Jurrasic Park movi
 I am NOT the first person to come up with this idea.  Bruno Simon has also done it, on his website https://bruno-simon.com/ .  When I saw his website I was inspired to pursue this project, as I had been trying various methods of creating a personal website recently. 
 
 Another particularly interesting site that uses 3D features is https://www.prometheusfuels.com 
+
+
+## Controls
+WASD / Arrows to drive
+E to switch to a nearby car
+R to reset
+Shift R to reset to start
